@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function OrdSelec() { 
+            var sequen = [1,10,12,2,4,5,9,0];
+            n = 9;
+                
+            for(let i = 0; i < n; i++) {
+                let min = i;
+                for(let j = i+1; j < n; j++){
+                    if(sequen[j] < sequen[min]) {
+                        min=j; 
+                    }
+                 }
+                 if (min != i) {
+                     let tmp = sequen[i]; 
+                     sequen[i] = sequen[min];
+                     sequen[min] = tmp;      
+                }
+            }
+            resultado = sequen;
+            document.getElementById("lblResultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <center><h3> ORDENAMIENTO POR SELECCIÓN </h3></center>
+    <center><h2>Datos: 1 - 10 - 12 - 2 - 4 - 5 - 9 - 0</h2></center>
+    <center><button type="button" onclick="OrdSelec()">Ordenar</button></center> <br>
+    <center><p id="lblResultado" ></p></p></center>
+    
+</body>
+</html>
