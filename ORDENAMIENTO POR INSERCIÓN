@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function OrdInser(Datos){
+            var sequen = [5,1,20,85,12,14,0,2,]
+            n= 8;
+            let i, key, j;  
+            for (i = 1; i < n; i++) 
+            {  
+                key = sequen[i];  
+                j = i - 1;  
+            
+                while (j >= 0 && sequen[j] > key) 
+                {  
+                    sequen[j + 1] = sequen[j];  
+                    j = j - 1;  
+                }  
+                sequen[j + 1] = key;  
+            }  
+            resultado = sequen;
+            document.getElementById("lblResultado").innerHTML = resultado;
+        }  
+    </script>
+</head>
+<body>
+    <center><h3>ORDENAMIENTO POR INSERCIÓN</h3></center>
+    <center><h2>Datos: 5 - 1 - 20 - 85 - 12 - 14 - 0 - 2</h2></center>
+    <center><button type="button" onclick="OrdInser()">Ordenar</button></center> <br>
+    <center><p id="lblResultado" ></p> </center>
+</body>
+</html> 
